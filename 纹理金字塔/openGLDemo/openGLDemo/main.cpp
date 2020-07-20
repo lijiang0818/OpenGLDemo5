@@ -269,6 +269,12 @@ void SetupRC()
     
 }
 
+// 清理…例如删除纹理对象
+void ShutdownRC(void)
+{
+    glDeleteTextures(1, &textureID);
+}
+
 //渲染场景
 void RenderScene()
 {
@@ -396,5 +402,8 @@ int main(int argc,char* argv[])
     
     //runloop运行循环
     glutMainLoop();
+    
+    ShutdownRC();
+    
     return 0;
 }
